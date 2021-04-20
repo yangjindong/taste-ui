@@ -1,7 +1,4 @@
 <template>
-  <router-link to="/">Frank</router-link> |
-  <router-link to="xxx">Frank2</router-link>
-  <hr />
   <router-view />
 </template>
 
@@ -24,6 +21,5 @@ export default defineComponent({
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
