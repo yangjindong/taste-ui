@@ -1,15 +1,18 @@
 <template>
+  <Topnav />
   <router-view />
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 import HelloWorld from "./components/HelloWorld.vue";
+import Topnav from "./components/Topnav.vue";
 
 export default defineComponent({
   name: "App",
   components: {
     HelloWorld,
+    Topnav,
   },
 });
 </script>
