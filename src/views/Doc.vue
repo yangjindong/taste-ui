@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    <aside>
+    <aside v-if="asideVisible">
       <h2>组件列表</h2>
       <ol>
         <li><router-link to="/doc/switch">Switch组件</router-link></li>
@@ -12,6 +12,19 @@
     <main>主内容</main>
   </div>
 </template>
+
+<script lang="ts">
+import { defineComponent, inject, Ref } from "vue";
+
+export default defineComponent({
+  name: "Doc",
+  setup() {
+    const asideVisible = inject<Ref<boolean>>("asideVisible");
+    console.log("doc获取的asideVisible为：" + asideVisible?.value);
+    return { asideVisible };
+  },
+});
+</script>
 
 <style lang="scss" scoped>
 aside {

@@ -1,0 +1,14 @@
+{
+	"folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "../../../projects/wwp-vite"
+    },
+    {
+      "path": "../../imooc/zheye"
+    }
+  ],
+  "settings": {}
+}

@@ -1,14 +1,28 @@
 <template>
   <div class="topnav">
-    <div class="logo">
-      <router-link to="/">LOGO</router-link>
-    </div>
+    <div class="logo" @click="toggleAside">LOGO</div>
     <ul class="menu">
       <li><a href="">菜单1</a></li>
       <li><a href="">菜单2</a></li>
     </ul>
   </div>
 </template>
+
+<script lang="ts">
+import { defineComponent, inject, Ref } from "vue";
+
+export default defineComponent({
+  name: "Topnav",
+  setup() {
+    const asideVisible = inject<Ref<boolean>>("asideVisible");
+    console.log("topnav获取的asideVisible为：" + asideVisible?.value + " a");
+    const toggleAside = () => {
+      asideVisible.value = !asideVisible.value;
+    };
+    return { toggleAside };
+  },
+});
+</script>
 
 <style lang="scss" scoped>
 .topnav {

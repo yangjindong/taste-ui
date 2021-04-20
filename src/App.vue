@@ -4,7 +4,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, provide, ref } from "vue";
 import HelloWorld from "./components/HelloWorld.vue";
 import Topnav from "./components/Topnav.vue";
 
@@ -13,6 +13,10 @@ export default defineComponent({
   components: {
     HelloWorld,
     Topnav,
+  },
+  setup() {
+    const asideVisible = ref(false);
+    provide("asideVisible", asideVisible);
   },
 });
 </script>
