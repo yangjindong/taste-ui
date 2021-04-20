@@ -2,8 +2,8 @@
   <div class="topnav">
     <div class="logo">LOGO</div>
     <ul class="menu">
-      <li>菜单1</li>
-      <li>菜单2</li>
+      <li><a href="">菜单1</a></li>
+      <li><a href="">菜单2</a></li>
     </ul>
   </div>
 </template>
