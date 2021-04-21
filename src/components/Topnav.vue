@@ -1,6 +1,7 @@
 <template>
   <div class="topnav">
-    <div class="logo" @click="toggleAside">LOGO</div>
+    <span class="toggleAside" @click="toggleAside"></span>
+    <div class="logo">LOGO</div>
     <ul class="menu">
       <li><a href="">菜单1</a></li>
       <li><a href="">菜单2</a></li>
@@ -15,7 +16,6 @@ export default defineComponent({
   name: "Topnav",
   setup() {
     const asideVisible = inject<Ref<boolean>>("asideVisible");
-    console.log("topnav获取的asideVisible为：" + asideVisible?.value + " a");
     const toggleAside = () => {
       asideVisible.value = !asideVisible.value;
     };
@@ -31,6 +31,8 @@ export default defineComponent({
   padding: 16px;
   position: relative;
   z-index: 10;
+  justify-content: center;
+  align-content: center;
   > .logo {
     max-width: 6em;
     margin-right: auto;
@@ -41,6 +43,27 @@ export default defineComponent({
     flex-wrap: nowrap;
     > li {
       margin: 0 1em;
+    }
+  }
+  > .toggleAside {
+    width: 24px;
+    height: 24px;
+    background-color: red;
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+  }
+  @media (max-width: 500px) {
+    > .logo {
+      margin: 0 auto;
+    }
+    > .menu {
+      display: none;
+    }
+    > .toggleAside {
+      display: inline-block;
     }
   }
 }

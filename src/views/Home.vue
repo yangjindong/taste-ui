@@ -17,6 +17,7 @@
   align-content: center;
   flex-direction: column;
   background: lightgreen;
+  text-align: center;
   > .actions {
     padding: 8px 0;
     a {
