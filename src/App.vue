@@ -1,19 +1,16 @@
 <template>
-  <Topnav />
   <router-view />
 </template>
 
 <script lang="ts">
 import { defineComponent, provide, ref } from "vue";
 import HelloWorld from "./components/HelloWorld.vue";
-import Topnav from "./components/Topnav.vue";
 import { router } from "./router";
 
 export default defineComponent({
   name: "App",
   components: {
     HelloWorld,
-    Topnav,
   },
   setup() {
     const width = document.documentElement.clientWidth;

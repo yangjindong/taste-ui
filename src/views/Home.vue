@@ -1,4 +1,5 @@
 <template>
+  <Topnav />
   <div class="banner">
     <h1>轱辘UI</h1>
     <h2>一个厉害的UI框架</h2>
@@ -8,6 +9,18 @@
     </p>
   </div>
 </template>
+
+<script lang="ts">
+import { defineComponent } from "vue";
+import Topnav from "../components/Topnav.vue";
+
+export default defineComponent({
+  name: "Home",
+  components: { Topnav },
+  setup() {},
+});
+</script>
+
 
 <style lang="scss" scoped>
 .banner {
