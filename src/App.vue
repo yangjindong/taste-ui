@@ -7,6 +7,7 @@
 import { defineComponent, provide, ref } from "vue";
 import HelloWorld from "./components/HelloWorld.vue";
 import Topnav from "./components/Topnav.vue";
+import { router } from "./router";
 
 export default defineComponent({
   name: "App",
@@ -19,6 +20,11 @@ export default defineComponent({
     console.log(width);
     const asideVisible = ref(width <= 500 ? false : true);
     provide("asideVisible", asideVisible);
+    router.afterEach(() => {
+      if (width <= 500) {
+        asideVisible.value = false;
+      }
+    });
   },
 });
 </script>
