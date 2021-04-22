@@ -1,7 +1,9 @@
 <template>
   <div>Button示例</div>
   <h1>示例一</h1>
-  <Button>你好</Button>
+  <Button @click="onClick" @focus="onClick" @mouseover="onClick" size="small">
+    你好
+  </Button>
 </template>
 
 <script lang="ts">
@@ -13,6 +15,11 @@ export default defineComponent({
   components: {
     Button
   },
-  setup() {}
+  setup() {
+    const onClick = () => {
+      console.log('Hi')
+    }
+    return { onClick }
+  }
 })
 </script>
