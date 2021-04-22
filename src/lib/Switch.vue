@@ -31,35 +31,35 @@ button {
   background-color: #b7b7b7;
   border-radius: $h/2;
   position: relative;
-}
-span {
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  height: $h2;
-  width: $h2;
-  background-color: white;
-  border-radius: $h2/2;
-  transition: all 250ms;
-}
-button.checked {
-  background-color: #1585ff;
-}
-button.checked > span {
-  left: calc(100% - #{$h2} - 2px);
-}
-button:focus {
-  outline: none;
-}
-button:active {
   > span {
-    width: $h2 + 4px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    height: $h2;
+    width: $h2;
+    background-color: white;
+    border-radius: $h2/2;
+    transition: all 250ms;
   }
-}
-button.checked:active {
-  > span {
-    width: $h2 + 4px;
-    margin-left: -4px;
+  &.checked {
+    background-color: #1585ff;
+    > span {
+      left: calc(100% - #{$h2} - 2px);
+    }
+  }
+  &:focus {
+    outline: none;
+  }
+  &:active {
+    > span {
+      width: $h2 + 4px;
+    }
+  }
+  &.checked:active {
+    > span {
+      width: $h2 + 4px;
+      margin-left: -4px;
+    }
   }
 }
 </style>
