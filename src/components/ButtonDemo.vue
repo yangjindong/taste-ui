@@ -1,7 +1,10 @@
 <template>
   <div>Button示例</div>
-  <h1>示例一</h1>
-  <Button @click="onClick" @focus="onClick">你好</Button>
+  <h3>示例一</h3>
+  <Button>你好</Button>
+  <Button theme="button">你好</Button>
+  <Button theme="link">你好</Button>
+  <Button theme="text">你好</Button>
 </template>
 
 <script lang="ts">
