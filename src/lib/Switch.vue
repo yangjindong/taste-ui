@@ -13,7 +13,7 @@ export default defineComponent({
   setup(props, context) {
     const toggle = () => {
       //'input'对应@input， !props.value对应$event
-      context.emit('input', !props.value)
+      context.emit('update:value', !props.value)
     }
     return { toggle }
   }
