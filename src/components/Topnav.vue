@@ -10,18 +10,18 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, inject, Ref } from "vue";
+import { defineComponent, inject, Ref } from 'vue'
 
 export default defineComponent({
-  name: "Topnav",
+  name: 'Topnav',
   setup() {
-    const asideVisible = inject<Ref<boolean>>("asideVisible");
+    const asideVisible = inject<Ref<boolean>>('asideVisible')
     const toggleAside = () => {
-      asideVisible.value = !asideVisible.value;
-    };
-    return { toggleAside };
-  },
-});
+      asideVisible.value = !asideVisible.value
+    }
+    return { toggleAside }
+  }
+})
 </script>
 
 <style lang="scss" scoped>

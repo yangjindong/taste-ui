@@ -17,17 +17,17 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, inject, Ref } from "vue";
-import Topnav from "../components/Topnav.vue";
+import { defineComponent, inject, Ref } from 'vue'
+import Topnav from '../components/Topnav.vue'
 
 export default defineComponent({
-  name: "Doc",
+  name: 'Doc',
   components: { Topnav },
   setup() {
-    const asideVisible = inject<Ref<boolean>>("asideVisible");
-    return { asideVisible };
-  },
-});
+    const asideVisible = inject<Ref<boolean>>('asideVisible')
+    return { asideVisible }
+  }
+})
 </script>
 
 <style lang="scss" scoped>
