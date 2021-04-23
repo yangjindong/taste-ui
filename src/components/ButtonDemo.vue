@@ -1,10 +1,14 @@
 <template>
   <div>Button示例</div>
-  <h3>示例一</h3>
+  <h3>示例1</h3>
   <Button>你好</Button>
   <Button theme="button">你好</Button>
   <Button theme="link">你好</Button>
   <Button theme="text">你好</Button>
+  <h3>示例2</h3>
+  <Button>你好</Button>
+  <Button size="small">你好</Button>
+  <Button size="big">你好</Button>
 </template>
 
 <script lang="ts">
