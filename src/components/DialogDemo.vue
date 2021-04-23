@@ -1,15 +1,23 @@
 <template>
   <h3>示例1</h3>
-  <Dialog />
+  <Button @click="toggle">toggle</Button>
+  <Dialog v-model:visible="x"></Dialog>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
 import Dialog from '../lib/Dialog.vue'
+import Button from '../lib/Button.vue'
 
 export default defineComponent({
   name: 'DialogDemo',
-  components: { Dialog },
-  setup() {}
+  components: { Dialog, Button },
+  setup() {
+    const x = ref(false)
+    const toggle = () => {
+      x.value = !x.value
+    }
+    return { x, toggle }
+  }
 })
 </script>
