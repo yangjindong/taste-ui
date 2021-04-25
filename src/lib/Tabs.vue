@@ -18,13 +18,14 @@
       <div class="gulu-tabs-nav-indicator" ref="indicator"></div>
     </div>
     <div class="gulu-tabs-content">
-      <component
+      <component :is="current" :key="current.props.title" />
+      <!-- <component
         class="gulu-tabs-content-item"
         v-for="(c, index) in defaults"
         :key="index"
         :is="c"
         :class="{ selected: c.props.title === selected }"
-      />
+      /> -->
     </div>
   </div>
 </template>
@@ -51,23 +52,42 @@ export default defineComponent({
     const indicator = ref<HTMLDivElement>(null)
     const container = ref<HTMLDivElement>(null)
 
-    onMounted(() => {
-      watchEffect(() => {
-        const { width } = selectedItem.value.getBoundingClientRect()
-        // console.log(selectedItem)
-        indicator.value.style.width = width + 'px'
-        const { left: left1 } = container.value.getBoundingClientRect()
-        const { left: left2 } = selectedItem.value.getBoundingClientRect()
-        const left = left2 - left1
-        indicator.value.style.left = left + 'px'
-      })
-    })
+    // onMounted(() => {
+    //   console.log('onMounted')
+    //   watchEffect(() => {
+    //     console.log('watchEffect()')
+    //     const { width } = selectedItem.value.getBoundingClientRect()
+    //     indicator.value.style.width = width + 'px'
+    //     const { left: left1 } = container.value.getBoundingClientRect()
+    //     const { left: left2 } = selectedItem.value.getBoundingClientRect()
+    //     const left = left2 - left1
+    //     console.log('left:' + left)
+    //     indicator.value.style.left = left + 'px'
+    //   })
+    // })
+
+    const x = () => {
+      const { width } = selectedItem.value.getBoundingClientRect()
+      indicator.value.style.width = width + 'px'
+      const { left: left1 } = container.value.getBoundingClientRect()
+      const { left: left2 } = selectedItem.value.getBoundingClientRect()
+      const left = left2 - left1
+      indicator.value.style.left = left + 'px'
+    }
+    onMounted(x)
+    onUpdated(x)
 
     const defaults = context.slots.default()
     defaults.forEach((tag) => {
       if (tag.type !== Tab) {
         throw new Error('Tabs子标签必须为Tab')
       }
+    })
+    const current = computed(() => {
+      // console.log('重新return')
+      return defaults.filter((tag) => {
+        return tag.props.title == props.selected
+      })[0]
     })
     const select = (title: string) => {
       context.emit('update:selected', title)
@@ -77,6 +97,7 @@ export default defineComponent({
     })
     return {
       defaults,
+      current,
       titles,
       select,
       selectedItem,

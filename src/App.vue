@@ -3,27 +3,27 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, provide, ref } from "vue";
-import HelloWorld from "./components/HelloWorld.vue";
-import { router } from "./router";
+import { defineComponent, provide, ref } from 'vue'
+import HelloWorld from './components/HelloWorld.vue'
+import { router } from './router'
 
 export default defineComponent({
-  name: "App",
+  name: 'App',
   components: {
-    HelloWorld,
+    HelloWorld
   },
   setup() {
-    const width = document.documentElement.clientWidth;
-    console.log(width);
-    const asideVisible = ref(width <= 500 ? false : true);
-    provide("asideVisible", asideVisible);
+    const width = document.documentElement.clientWidth
+    // console.log(width);
+    const asideVisible = ref(width <= 500 ? false : true)
+    provide('asideVisible', asideVisible)
     router.afterEach(() => {
       if (width <= 500) {
-        asideVisible.value = false;
+        asideVisible.value = false
       }
-    });
-  },
-});
+    })
+  }
+})
 </script>
 
 <style>
