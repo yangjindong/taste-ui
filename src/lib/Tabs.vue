@@ -30,7 +30,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, ref, onMounted, onUpdated } from 'vue'
+import {
+  defineComponent,
+  computed,
+  ref,
+  onMounted,
+  onUpdated,
+  watchEffect
+} from 'vue'
 import Tab from './Tab.vue'
 
 export default defineComponent({
@@ -40,31 +47,27 @@ export default defineComponent({
     }
   },
   setup(props, context) {
-    const selectedItem = ref<HTMLDivElement[]>(null)
+    const selectedItem = ref<HTMLDivElement>(null)
     const indicator = ref<HTMLDivElement>(null)
     const container = ref<HTMLDivElement>(null)
-    const x = () => {
-      const { width } = selectedItem.value.getBoundingClientRect()
-      indicator.value.style.width = width + 'px'
-      const { left: left1 } = container.value.getBoundingClientRect()
-      const { left: left2 } = selectedItem.value.getBoundingClientRect()
-      const left = left2 - left1
-      indicator.value.style.left = left + 'px'
-    }
-    onMounted(x)
-    onUpdated(x)
+
+    onMounted(() => {
+      watchEffect(() => {
+        const { width } = selectedItem.value.getBoundingClientRect()
+        // console.log(selectedItem)
+        indicator.value.style.width = width + 'px'
+        const { left: left1 } = container.value.getBoundingClientRect()
+        const { left: left2 } = selectedItem.value.getBoundingClientRect()
+        const left = left2 - left1
+        indicator.value.style.left = left + 'px'
+      })
+    })
 
     const defaults = context.slots.default()
     defaults.forEach((tag) => {
       if (tag.type !== Tab) {
         throw new Error('Tabs子标签必须为Tab')
       }
-    })
-    const current = computed(() => {
-      console.log('重新return')
-      return defaults.filter((tag) => {
-        return tag.props.title == props.selected
-      })[0]
     })
     const select = (title: string) => {
       context.emit('update:selected', title)
@@ -75,7 +78,6 @@ export default defineComponent({
     return {
       defaults,
       titles,
-      current,
       select,
       selectedItem,
       indicator,
