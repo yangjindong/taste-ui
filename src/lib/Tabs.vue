@@ -12,8 +12,13 @@
       </div>
     </div>
     <div class="gulu-tabs-content">
-      {{ current }}
-      <component class="gulu-tabs-content-item" :is="current" />
+      <component
+        class="gulu-tabs-content-item"
+        v-for="(c, index) in defaults"
+        :key="index"
+        :is="c"
+        :class="{ selected: c.props.title === selected }"
+      />
     </div>
   </div>
 </template>
@@ -85,6 +90,12 @@ $border-color: #d9d9d9;
   }
   &-content {
     padding: 8px 0;
+    &-item {
+      display: none;
+      &.selected {
+        display: block;
+      }
+    }
   }
 }
 </style>
