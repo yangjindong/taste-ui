@@ -4,7 +4,6 @@
     <router-link class="logo" to="/">LOGO</router-link>
     <ul class="menu">
       <li><router-link to="/doc">文档</router-link></li>
-      <li><a href="">菜单2</a></li>
     </ul>
   </div>
 </template>
@@ -26,7 +25,6 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .topnav {
-  background-color: pink;
   display: flex;
   padding: 16px;
   position: fixed;

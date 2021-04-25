@@ -1,4 +1,5 @@
 <template>
+  <h2>Switch组件</h2>
   <div>
     <Switch v-model:value="bool" />
   </div>

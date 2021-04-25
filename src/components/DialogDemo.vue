@@ -1,20 +1,24 @@
 <template>
+  <h2>Dialog组件</h2>
   <h3>示例1</h3>
-  <Button @click="toggle">toggle</Button>
-  <Dialog
-    v-model:visible="x"
-    :closeOnClickOverlay="false"
-    :ok="f1"
-    :cancel="f2"
-  >
-    <template v-slot:title>
-      <strong>标题</strong>
-    </template>
-    <template v-slot:content>
-      <strong>第一行字</strong>
-      <p>第二行字</p>
-    </template>
-  </Dialog>
+  <div>
+    <Button @click="toggle">toggle</Button>
+    <Dialog
+      v-model:visible="x"
+      :closeOnClickOverlay="true"
+      :ok="f1"
+      :cancel="f2"
+    >
+      <template v-slot:title>
+        <strong>标题</strong>
+      </template>
+      <template v-slot:content>
+        <strong>第一行字</strong>
+        <p>第二行字</p>
+      </template>
+    </Dialog>
+  </div>
+  <br />
   <h3>示例2</h3>
   <Button @click="showDialog">show</Button>
 </template>

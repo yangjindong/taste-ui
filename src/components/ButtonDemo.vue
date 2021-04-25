@@ -1,10 +1,13 @@
 <template>
-  <div>Button示例</div>
+  <h2>Button组件</h2>
   <h3>示例1</h3>
-  <Button>你好</Button>
-  <Button theme="button">你好</Button>
-  <Button theme="link">你好</Button>
-  <Button theme="text">你好</Button>
+  <div>
+    <Button>你好</Button>
+    <Button theme="button">你好</Button>
+    <Button theme="link">你好</Button>
+    <Button theme="text">你好</Button>
+  </div>
+  <br />
   <h3>示例2</h3>
   <div>
     <Button size="big">大大</Button>
@@ -21,6 +24,7 @@
     <Button theme="text">普通</Button>
     <Button theme="text" size="small">小小</Button>
   </div>
+  <br />
   <h3>示例3</h3>
   <div>
     <div>
@@ -39,12 +43,14 @@
       <Button theme="text" level="danger">危险文字按钮</Button>
     </div>
   </div>
+  <br />
   <h3>示例4</h3>
   <div>
     <Button disabled>禁用按钮</Button>
     <Button theme="link" disabled>禁用链接按钮</Button>
     <Button theme="text" disabled>禁用文字按钮</Button>
   </div>
+  <br />
   <h3>示例5</h3>
   <div>
     <Button loading>加载中</Button>

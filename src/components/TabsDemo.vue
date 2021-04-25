@@ -1,5 +1,5 @@
 <template>
-  <div>Tabs示例</div>
+  <h2>Tabs组件</h2>
   <h3>示例1</h3>
   <Tabs v-model:selected="x">
     <Tab title="导航1">内容1</Tab>
