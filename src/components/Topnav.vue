@@ -1,7 +1,11 @@
 <template>
   <div class="topnav">
     <span class="toggleAside" @click="toggleAside"></span>
-    <router-link class="logo" to="/">LOGO</router-link>
+    <router-link class="logo" to="/">
+      <svg class="icon">
+        <use xlink:href="#icon-taste"></use>
+      </svg>
+    </router-link>
     <ul class="menu">
       <li><router-link to="/doc">文档</router-link></li>
     </ul>
@@ -24,6 +28,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+$h: 32px;
 .topnav {
   display: flex;
   padding: 16px;
@@ -37,6 +42,10 @@ export default defineComponent({
   > .logo {
     max-width: 6em;
     margin-right: auto;
+    svg {
+      height: $h;
+      width: $h;
+    }
   }
   > .menu {
     display: flex;
@@ -44,6 +53,9 @@ export default defineComponent({
     flex-wrap: nowrap;
     > li {
       margin: 0 1em;
+    }
+    a {
+      line-height: $h;
     }
   }
   > .toggleAside {

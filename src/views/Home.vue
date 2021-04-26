@@ -3,12 +3,23 @@
     <Topnav />
     <div class="banner">
       <h1>轱辘UI</h1>
-      <h2>一个厉害的UI框架</h2>
+      <h2>一个面向学习者的UI框架</h2>
       <p class="actions">
         <a href="">Github</a>
         <router-link to="/doc">开始</router-link>
       </p>
     </div>
+  </div>
+  <div class="features">
+    <svg class="icon">
+      <use xlink:href="#icon-vue"></use>
+    </svg>
+    <svg class="icon">
+      <use xlink:href="#icon-ts"></use>
+    </svg>
+    <svg class="icon">
+      <use xlink:href="#icon-light"></use>
+    </svg>
   </div>
 </template>
 
@@ -25,6 +36,7 @@ export default defineComponent({
 
 
 <style lang="scss" scoped>
+$color: #2b2e15;
 .topnav-banner {
   background: rgb(128, 147, 101);
   background: linear-gradient(
@@ -40,7 +52,10 @@ export default defineComponent({
   align-content: center;
   flex-direction: column;
   text-align: center;
-  color: #eeeeee;
+  h1,
+  h2 {
+    color: $color;
+  }
   > .actions {
     padding: 8px 0;
     a {
@@ -51,10 +66,10 @@ export default defineComponent({
       $h: 30px;
       height: $h;
       line-height: $h;
-      border-radius: $h/2;
+      border-radius: 4px;
       padding: 0 12px;
       &:hover {
-        border-bottom: 1px solid;
+        text-decoration: none;
       }
     }
   }
