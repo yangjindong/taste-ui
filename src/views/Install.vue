@@ -1,10 +1,10 @@
 <template>
-  <article>
+  <article class="markdown-body">
     <h1>安装</h1>
     <p>打开终端运行下列命令：</p>
-    <pre><code>npm install taste-ui</code></pre>
+    <pre><code>npm install bottle-ui</code></pre>
     <p>或</p>
-    <pre><code>yarn add taste-ui</code></pre>
+    <pre><code>yarn add bottle-ui</code></pre>
 
     <p>
       下一节：

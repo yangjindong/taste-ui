@@ -2,10 +2,10 @@
   <div class="topnav-banner">
     <Topnav />
     <div class="banner">
-      <h1>五味瓶UI</h1>
+      <h1>Bottle UI</h1>
       <h2>一个面向学习者的UI框架</h2>
       <p class="actions">
-        <a href="https://github.com/yangjindong/taste-ui">Github</a>
+        <a href="https://github.com/yangjindong/bottle-ui">Github</a>
         <router-link to="/doc/intro">开始</router-link>
       </p>
     </div>
