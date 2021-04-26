@@ -8,9 +8,7 @@
       <use xlink:href="#icon-menu"></use>
     </svg>
     <router-link class="logo" to="/">
-      <svg class="icon">
-        <use xlink:href="#icon-taste"></use>
-      </svg>
+      <img src="../assets/logo-t.png" />
     </router-link>
     <ul class="menu">
       <li><router-link to="/doc">文档</router-link></li>
@@ -54,7 +52,7 @@ $h: 32px;
   > .logo {
     max-width: 6em;
     margin-right: auto;
-    svg {
+    img {
       height: $h;
       width: $h;
     }
