@@ -10,5 +10,8 @@
       "path": "../../imooc/zheye"
     }
   ],
-  "settings": {}
+  "settings": {
+    "vetur.validation.template": false,
+    "vetur.validation.interpolation": false
+  }
 }

@@ -1,27 +1,37 @@
 <template>
-  <button
-    class="gulu-switch"
-    @click="toggle"
-    :class="{ 'gulu-checked': value }"
-  >
+  <button class="gulu-switch" @click="toggle" :class="classes">
     <span></span>
   </button>
   <div>{{ value }}</div>
+  <div v-if="disabled">{{ disabled }}</div>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent, computed, ref } from 'vue'
 
 export default defineComponent({
   props: {
-    value: Boolean
+    value: Boolean,
+    disabled: {
+      type: Boolean,
+      default: false
+    }
   },
   setup(props, context) {
     const toggle = () => {
       //'input'对应@input， !props.value对应$event
       context.emit('update:value', !props.value)
     }
-    return { toggle }
+    const classes = computed(() => {
+      if (props.disabled) {
+        return ''
+      } else if (props.value) {
+        return 'gulu-checked'
+      } else {
+        return ''
+      }
+    })
+    return { toggle, classes }
   }
 })
 </script>
