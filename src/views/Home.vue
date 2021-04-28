@@ -55,7 +55,7 @@ $color: #2b2e15;
   background: rgb(128, 147, 101);
   background: linear-gradient(
     115deg,
-    lighten(rgba(128, 147, 101), 15%) 0%,
+    lighten(#809365, 15%) 0%,
     rgba(128, 147, 101, 1) 100%
   );
   clip-path: ellipse(80% 60% at 50% 40%);
