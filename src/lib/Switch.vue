@@ -1,9 +1,11 @@
 <template>
-  <button class="gulu-switch" @click="toggle" :class="classes">
+  <button
+    class="gulu-switch"
+    @click="toggle"
+    :class="{ 'gulu-checked': value }"
+  >
     <span></span>
   </button>
-  <div>{{ value }}</div>
-  <div v-if="disabled">{{ disabled }}</div>
 </template>
 
 <script lang="ts">
@@ -11,27 +13,14 @@ import { defineComponent, computed, ref } from 'vue'
 
 export default defineComponent({
   props: {
-    value: Boolean,
-    disabled: {
-      type: Boolean,
-      default: false
-    }
+    value: Boolean
   },
   setup(props, context) {
     const toggle = () => {
       //'input'对应@input， !props.value对应$event
       context.emit('update:value', !props.value)
     }
-    const classes = computed(() => {
-      if (props.disabled) {
-        return ''
-      } else if (props.value) {
-        return 'gulu-checked'
-      } else {
-        return ''
-      }
-    })
-    return { toggle, classes }
+    return { toggle }
   }
 })
 </script>

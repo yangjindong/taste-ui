@@ -66,14 +66,14 @@ export default defineComponent({
   }
 }
 aside {
-  background: lightblue;
+  background: #f3f3f3;
   width: 150px;
   padding: 16px 0;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 9;
-  padding-top: 70px;
+  padding-top: 80px;
   height: 100%;
   > h2 {
     margin-bottom: 4px;
