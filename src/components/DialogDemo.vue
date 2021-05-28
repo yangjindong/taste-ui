@@ -1,5 +1,5 @@
 <template>
-  <h2>Dialog组件</h2>
+  <h2>Dialog示例</h2>
   <Demo :component="Dialog1Demo" />
   <Demo :component="Dialog2Demo" />
 </template>
