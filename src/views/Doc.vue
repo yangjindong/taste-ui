@@ -43,7 +43,7 @@ export default defineComponent({
   height: 100vh;
   > .nav {
     flex-shrink: 0;
-    background: #809365;
+    background: rgba(128, 147, 101, 0.92);
   }
   > .content {
     flex-grow: 1;
