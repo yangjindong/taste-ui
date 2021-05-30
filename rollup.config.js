@@ -12,12 +12,12 @@ export default {
         vue: 'Vue'
       },
       name: 'Bottle',
-      file: 'dist/lib/bottle.js',
+      file: 'dist/lib/taste.js',
       format: 'umd'
     },
     {
       name: 'Bottle',
-      file: 'dist/lib/bottle.esm.js',
+      file: 'dist/lib/taste.esm.js',
       format: 'es'
     }
   ],

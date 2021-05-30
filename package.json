@@ -1,8 +1,20 @@
 {
-  "name": "gulu",
+  "name": "taste-ui",
   "version": "0.0.1",
   "files": ["dist/lib/*"],
-  "main": "dist/lib/bottle.js",
+  "main": "dist/lib/taste.js",
+  "license": "MIT",
+  "keywords": [
+    "Component",
+    "UI",
+    "Vue",
+    "taste-ui"
+  ],
+  "homepage": "https://github.com/yangjindong/taste-ui",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yangjindong/taste-ui"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
