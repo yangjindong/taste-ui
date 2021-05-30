@@ -4,7 +4,7 @@ Vue components for faster and simpler web development. Build your own design sys
 
 # Demo
 
-[https://github.com/yangjindong/taste](https://github.com/yangjindong/taste)
+[Taste-UI](https://yangjindong.github.io/taste/index.html)
 
 # Installation
 
