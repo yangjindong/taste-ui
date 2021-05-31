@@ -29,8 +29,7 @@ export default {
     esbuild({
       include: /\.[jt]s$/,
       minify: process.env.NODE_ENV === 'production',
-      target: 'esnext',
-      tsconfig: 'tsconfig.json'
+      target: 'es2015'
     }),
     terser()
   ]

@@ -12,6 +12,12 @@ Vue components for faster and simpler web development. Build your own design sys
 npm install taste-ui
 ```
 
+Or
+
+```
+yarn add taste-ui
+```
+
 # Usage
 
 ```

@@ -8,8 +8,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import Tabs from '../lib/Tabs.vue'
-import Tab from '../lib/Tab.vue'
+import { Tabs, Tab } from '../lib/index'
 
 export default defineComponent({
   components: { Tabs, Tab },

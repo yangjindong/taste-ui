@@ -7,8 +7,7 @@
 
 <script lang="ts">
 import { defineComponent, h } from 'vue'
-import { openDialog } from '../lib/openDialog'
-import Button from '../lib/Button.vue'
+import { openDialog, Button } from '../lib/index'
 
 export default defineComponent({
   components: { Button },

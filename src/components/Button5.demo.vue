@@ -8,7 +8,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Button from '../lib/Button.vue'
+import { Button } from '../lib/index'
 
 export default defineComponent({
   components: { Button }
