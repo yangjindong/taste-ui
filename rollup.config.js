@@ -1,6 +1,7 @@
 import esbuild from 'rollup-plugin-esbuild'
 import vue from 'rollup-plugin-vue'
 import scss from 'rollup-plugin-scss'
+import postcss from 'rollup-plugin-postcss'
 import dartSass from 'sass'
 import { terser } from 'rollup-plugin-terser'
 
@@ -23,14 +24,21 @@ export default {
   ],
   plugins: [
     vue({
-      include: /\.vue$/
+      include: /\.vue$/,
+      preprocessStyles: true
     }),
-    scss({ include: /\.scss$/, sass: dartSass }),
+    scss({
+      include: /\.scss$/,
+      // prefix: `@import "./src/lib/taste.scss";`,
+      sass: dartSass
+    }),
+    postcss(),
     esbuild({
       include: /\.[jt]s$/,
       minify: process.env.NODE_ENV === 'production',
       target: 'es2015'
     }),
     terser()
-  ]
+  ],
+  external: ['vue']
 }
